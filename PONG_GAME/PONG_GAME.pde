@@ -16,9 +16,10 @@ float leftx, lefty, leftd, rightx, righty, rightd;
 float ballx, bally, balld; //ball
 float paddlex, paddley, paddled; //paddle
 
+//scoring
+int leftscore, rightscore, timer;
 
 //target variables
-
 float vx, vy; //target velocity
 //keyboard variables
 boolean wkey, skey, upkey, downkey;
