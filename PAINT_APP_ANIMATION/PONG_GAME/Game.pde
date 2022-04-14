@@ -12,8 +12,7 @@ void game() {
   text(leftscore, width/4, 100);
   fill(154, 234, 111);
   text(rightscore, 3*width/4, 100);
-  //text(timer, 3*width/4, 550);
-  timer = timer - 1;
+  text(timer, 3*width/4,550);
 
   //draw paddles
   fill(255, 170, 255);
@@ -26,11 +25,6 @@ void game() {
   if (skey == true) lefty = lefty + 5;
   if (upkey == true) righty = righty - 5;
   if (downkey == true) righty = righty + 5;
-  
-  lefty = max (lefty, 0);
-  lefty = min (lefty, 600);
-  righty = max (righty, 0);
-  righty = min (righty, 600);
 
   //ball
   fill(49, 0, 252);
@@ -43,23 +37,19 @@ void game() {
   ellipse(ballx, bally, balld, balld);
 
   //moving ball
-  if (timer < 0) {
   ballx = ballx + vx;
   bally = bally + vy;
-  }
-  
+
   //scoring
   if (ballx < 0) {
     rightscore = rightscore + 1;
     ballx = width/2;
     bally = height/2;
-    timer = 100; 
   }
    if (ballx > 800) {
     leftscore++;
     ballx = width/2;
     bally = height/2;
-    timer = 100;
   }
     
   
