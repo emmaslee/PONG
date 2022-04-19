@@ -1,5 +1,5 @@
 void intro() {
-  
+  background(255);
    // Game Title
   strokeWeight(1);
   fill(0);
@@ -16,7 +16,7 @@ void intro() {
   rect(300, 400, 200, 100);
   fill(0);
   textSize(30);
-  text("START", 350, 450);
+  text("START", 350, 460);
   
 }
 
@@ -24,4 +24,5 @@ void introClicks() {
   if (mouseX > 300 && mouseX < 500 && mouseY > 400 && mouseY < 500) {
     mode = GAME;
   }
+ 
 }

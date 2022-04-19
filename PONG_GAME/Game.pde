@@ -1,6 +1,7 @@
 void game() {
   background(0);
   
+  
   //center line
   strokeWeight(5);
   stroke(255);
@@ -26,6 +27,8 @@ void game() {
   if (skey == true) lefty = lefty + 5;
   if (upkey == true) righty = righty - 5;
   if (downkey == true) righty = righty + 5;
+  
+ 
   
   lefty = max (lefty, 0);
   lefty = min (lefty, 600);
@@ -54,12 +57,16 @@ void game() {
     ballx = width/2;
     bally = height/2;
     timer = 100; 
+  } else {
+     if (rightscore == 3) mode = GAMEOVER;
   }
    if (ballx > 800) {
     leftscore++;
     ballx = width/2;
     bally = height/2;
     timer = 100;
+      } else {
+     if (leftscore == 3) mode = GAMEOVER;
   }
     
   
@@ -88,4 +95,5 @@ void game() {
 }
 
 void gameClicks() {
+ 
 }
