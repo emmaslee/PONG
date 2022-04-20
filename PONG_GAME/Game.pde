@@ -1,6 +1,14 @@
 void game() {
+  theme.play();
   background(0);
   
+  //pause button
+  stroke(0);
+  fill(200);
+  rect(640, 500, 150, 80);
+  fill(0);
+  textSize(50);
+  text( "||" , 700, 560);
   
   //center line
   strokeWeight(5);
@@ -54,6 +62,8 @@ void game() {
   //scoring
   if (ballx < 0) {
     rightscore = rightscore + 1;
+    bump.rewind();
+    bump.play(); 
     ballx = width/2;
     bally = height/2;
     timer = 100; 
@@ -62,6 +72,8 @@ void game() {
   }
    if (ballx > 800) {
     leftscore++;
+    bump.rewind();
+    bump.play(); 
     ballx = width/2;
     bally = height/2;
     timer = 100;
@@ -95,5 +107,7 @@ void game() {
 }
 
 void gameClicks() {
- 
+ if (mouseX > 640 && mouseX < 790 && mouseY > 500 && mouseY < 580) {
+    mode = PAUSE;
+ }
 }

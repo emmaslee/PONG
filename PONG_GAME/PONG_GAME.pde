@@ -1,3 +1,10 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 //Pong!
 //Emma Lee
 //2-4
@@ -26,9 +33,13 @@ float vx, vy; //target velocity
 //keyboard variables
 boolean wkey, skey, upkey, downkey;
 
+//sound variables
+Minim minim; 
+AudioPlayer theme, coin, bump, gameover;
+
 void setup() {
   size(800, 600);
-  mode = GAMEOVER;
+  mode = INTRO;
   
   
   
@@ -54,6 +65,12 @@ void setup() {
   //initialize keyboard variables
   wkey = skey = upkey = downkey = false;
   
+  //minim
+  minim = new Minim(this);
+  theme = minim.loadFile("mario bros theme.mp3");
+  coin = minim.loadFile("coin.wav");
+  bump = minim.loadFile("bump.wav");
+  gameover = minim.loadFile("gameover.wav");
 }
 
 void draw() {

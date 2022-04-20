@@ -1,4 +1,6 @@
   void gameover() {
+  theme.pause();
+  gameover.play();
     
     background(152, 18, 18);
     
@@ -9,17 +11,17 @@
 
   if (leftscore > rightscore) {
     
-    rect(200, 250, 400, 100);
-    textSize(35);
-    fill(255, 249, 49);
-    text("LEFT WINS", 300, 310);
+    rect(160, 230, 490, 120);
+    textSize(80);
+    fill(255, 170, 255);
+    text("LEFT WINS", 180, 320);
  } else {     
 
     
-    rect(200, 250, 400, 100);
-    textSize(35);
-    fill(255, 249, 49);
-    text("RIGHT WINS", 300, 310);
+    rect(160, 230, 490, 120);
+    textSize(80);
+    fill(154, 234, 111);
+    text("RIGHT WINS", 180, 320);
  }
    
   //Return to Game button
@@ -38,5 +40,11 @@
 void gameoverClicks() {
   if (mouseX > 300 && mouseX < 500 && mouseY > 400 && mouseY < 500) {
     mode = INTRO;
+    if (mode == INTRO) {
+      rightscore= 0;
+      leftscore = 0;
+      
+    }
+    theme.rewind();
   }
 }
