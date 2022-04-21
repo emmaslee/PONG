@@ -14,7 +14,7 @@
     rect(160, 230, 490, 120);
     textSize(80);
     fill(255, 170, 255);
-    text("LEFT WINS", 180, 320);
+    text("LEFT WINS", 200, 320);
  } else {     
 
     

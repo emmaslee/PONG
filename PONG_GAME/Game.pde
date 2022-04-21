@@ -33,9 +33,16 @@ void game() {
   //move paddles
   if (wkey == true) lefty = lefty - 5;
   if (skey == true) lefty = lefty + 5;
+  
+  if (AI == false) {
   if (upkey == true) righty = righty - 5;
   if (downkey == true) righty = righty + 5;
-  
+  } else {
+    
+    if ( bally > righty) righty = righty + 2;
+    if (
+
+  }
  
   
   lefty = max (lefty, 0);

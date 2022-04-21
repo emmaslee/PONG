@@ -13,23 +13,39 @@ void intro() {
   textSize(72);
   text("PONG  GAME", 180, 300);
  
-  //Start Button
-  //tactile - Start button
-  if (mouseX > 300 && mouseX < 500 && mouseY > 400 && mouseY < 500) {
+  
+  //1 PLAYER Button
+  //tactile - 1 PLAYER button
+  if (mouseX > 80 && mouseX < 380 && mouseY > 400 && mouseY < 500) {
     fill(197, 232, 230);
   } else {
     fill(200);
   }
-  rect(300, 400, 200, 100);
+  rect(80, 400, 300, 100);
   fill(0);
-  textSize(30);
-  text("START", 350, 460);
+  textSize(35);
+  text("1 PLAYER", 150, 465);
   
+  //2 PLAYER Button
+  //tactile - 2 PLAYER button
+  if (mouseX > 450 && mouseX < 700 && mouseY > 400 && mouseY < 500) {
+    fill(197, 232, 230);
+  } else {
+    fill(200);
+  }
+  rect(420, 400, 300, 100);
+  fill(0);
+  textSize(35);
+  text("2 PLAYER", 490, 465);
 }
 
 void introClicks() {
-  if (mouseX > 300 && mouseX < 500 && mouseY > 400 && mouseY < 500) {
-    mode = GAME;
-  }
- 
+ if (mouseX > 80 && mouseX < 380 && mouseY > 400 && mouseY < 500) {
+   mode = GAME;
+   AI = true;
+ }
+ if (mouseX > 450 && mouseX < 700 && mouseY > 400 && mouseY < 500) {
+   mode = GAME;
+   AI = false;
+ }
 }
