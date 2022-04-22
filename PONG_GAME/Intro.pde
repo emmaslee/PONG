@@ -12,7 +12,8 @@ void intro() {
   fill(0);
   textSize(72);
   text("PONG  GAME", 180, 300);
- 
+  image(soccer, 50, 50, 100, 100);
+  image(soccer, 650, 50, 100, 100);
   
   //1 PLAYER Button
   //tactile - 1 PLAYER button

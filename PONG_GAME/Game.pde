@@ -27,8 +27,10 @@ void game() {
   //draw paddles
   fill(255, 170, 255);
   circle(leftx, lefty, leftd);
+  
   fill(154, 234, 111);
   circle(rightx, righty, rightd);
+  
 
   //move paddles
   if (wkey == true) lefty = lefty - 5;
@@ -39,9 +41,10 @@ void game() {
   if (downkey == true) righty = righty + 5;
   } else {
     
+    if (ballx > 400) {                                  
     if ( bally > righty) righty = righty + 2;
-    if (
-
+    if ( bally < righty) righty = righty - 2;
+    }
   }
  
   
@@ -51,14 +54,17 @@ void game() {
   righty = min (righty, 600);
 
   //ball
-  fill(49, 0, 252);
+  
+  fill(255);
   circle(ballx, bally, balld);
+ 
   
   //display target
   fill(255);
   stroke(255);
   strokeWeight(5);
   ellipse(ballx, bally, balld, balld);
+   image(soccer, ballx-balld/2, bally-balld/2, balld, balld);
 
   //moving ball
   if (timer < 0) {

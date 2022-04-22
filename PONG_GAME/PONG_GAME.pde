@@ -24,6 +24,9 @@ float ballx, bally, balld; //ball
 float paddlex, paddley, paddled; //paddle
 boolean AI;
 
+//paddle image variables
+PImage soccer;
+
 //scoring
 int leftscore, rightscore, timer;
 
@@ -71,6 +74,11 @@ void setup() {
   coin = minim.loadFile("coin.wav");
   bump = minim.loadFile("bump.wav");
   gameover = minim.loadFile("gameover.wav");
+  
+  //paddle images
+  soccer = loadImage("soccer.png");
+ 
+  
 }
 
 void draw() {
